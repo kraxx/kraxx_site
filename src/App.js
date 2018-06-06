@@ -11,18 +11,17 @@ class App extends Component {
  toggleDisplay() {
     this.setState({
       toggled: !this.state.toggled
-    })
+    });
   }
 
   render() {
     const displayed = this.state.toggled ? 'none' : 'block';
     return (
       <div style={styles.pageContainer}>
-        <div style={styles.centralContainer}>
-          <div
-          style={{ 'display' : displayed }} 
-          onClick={() => this.toggleDisplay()}>
-            <h1>{'kraxx'}</h1>
+        <div style={styles.centralContainer}
+        onClick={() => this.toggleDisplay()}>
+          <div style={{ 'display' : displayed }}>
+            <p style={styles.word}>{'kraxx'}</p>
           </div>
         </div>
       </div>
@@ -32,18 +31,26 @@ class App extends Component {
 
 const styles = {
   pageContainer: {
-    width: '100vw',
     height: '100vh',
+    width: '100vw',
     verticalAlign: 'center',
-    backgroundColor: 'red'
+    backgroundColor: 'white'
   },
   centralContainer: {
-    display: 'fixed',
+    position: 'absolute',
     top: '50%',
     left: '50%',
+    height: '50vh',
+    width: '50vw',
+    verticalAlign: 'center',
     textAlign: 'center',
-    fontSize: '15vh',
-    backgroundColor: 'blue',
+    transform: 'translate(-50%, -50%)',
+    backgroundColor: 'black',
+  },
+  word: {
+    fontSize: '10vmin',
+    color: 'black',
+    backgroundColor: 'white'
   }
 }
 
