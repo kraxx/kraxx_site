@@ -15,12 +15,12 @@ class App extends Component {
   }
 
   render() {
-    const displayed = this.state.toggled ? 'none' : 'block';
+    const displayed = this.state.toggled ? 'none' : 'inline-block';
     return (
       <div style={styles.pageContainer}>
         <div style={styles.centralContainer}
         onClick={() => this.toggleDisplay()}>
-          <div style={{ 'display' : displayed }}>
+          <div style={{...styles.wordContainer, 'display': displayed}}>
             <p style={styles.word}>{'kraxx'}</p>
           </div>
         </div>
@@ -40,17 +40,27 @@ const styles = {
     position: 'absolute',
     top: '50%',
     left: '50%',
-    height: '50vh',
-    width: '50vw',
-    verticalAlign: 'center',
+    // margin: '10%',
+    height: '80%',
+    width: '80%',
     textAlign: 'center',
     transform: 'translate(-50%, -50%)',
     backgroundColor: 'black',
+    boxShadow: '1.5vmin 1.5vmin rgba(0,0,0,0.7)'
+  },
+  wordContainer: {
+    // margin: '0 auto',
+    // verticalAlign: 'center',
+    // backgroundColor: 'grey',
+    position: 'relative',
+    top: '50%',
+    transform: 'perspective(1px) translateY(-50%)'
   },
   word: {
-    fontSize: '10vmin',
-    color: 'black',
-    backgroundColor: 'white'
+    fontSize: '20vmin',
+    color: 'white',
+    // fontFamily: 'Nanum Gothic',
+    // backgroundColor: 'white'
   }
 }
 
