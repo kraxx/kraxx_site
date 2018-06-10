@@ -4,7 +4,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 const outputDirectory = "dist";
 
-const clientPort = 3000;
+const clientPort = 8080;
 // const serverPort = 8081;
 
 module.exports = {
@@ -23,10 +23,18 @@ module.exports = {
           loader: "babel-loader"
         }
       },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
-      }
+{
+  test: /\.css$/,
+  loader: 'style-loader'
+}, {
+  test: /\.css$/,
+  loader: 'css-loader',
+  query: {
+    modules: true,
+    localIdentName: '[name]__[local]___[hash:base64:5]'
+  }
+}
+
     ]
   },
   // devServer: {
