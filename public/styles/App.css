@@ -1,9 +1,14 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: white;
+}
 .pageContainer {
   /*margin: 0 auto;*/
-  height: 100vh;
-  width: 100vw;
+  /*height: 100vh;*/
+  /*width: 100vw;*/
   /*vertical-align: center;*/
-  background-color: white;
 }
 .centralContainer {
   position: absolute;
@@ -15,16 +20,5 @@
   transform: translate(-50%, -50%);
   background-color: black;
   box-shadow: 1.5vmin 1.5vmin rgba(0,0,0,0.7);
-}
-.wordContainer {
-  position: relative;
-  display: inline-block;
-  /*margin: auto;*/
-  top: 50%;
-  transform: perspective(1px) translateY(-50%);
-  /*background-color: red;*/
-}
-.word {
-  font-size: 20vmin;
-  color: white;
+  border: 1px solid green;
 }

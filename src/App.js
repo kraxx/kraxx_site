@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NamePlate from './NamePlate';
-import './App.css';
+import Main from './Main';
+import '../public/styles/App.css';
 
 class App extends Component {
 
@@ -9,11 +10,18 @@ class App extends Component {
     this.state = { toggled : false };
   }
 
+  handleClick = () => {
+    this.setState({ toggled: true });
+  }
+
   render() {
     const displayed = this.state.toggled ? 'none' : 'inline-block';
     return (
-      <div className='pageContainer'>
-        <NamePlate />
+      <div className='centralContainer'>
+      {this.state.toggled
+        ? <Main />
+        : <NamePlate callback={() => this.handleClick()}/>
+      }
       </div>
     );
   }
