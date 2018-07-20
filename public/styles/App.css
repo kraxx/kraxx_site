@@ -1,14 +1,8 @@
 body {
-  margin: 0 auto;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: white;
-}
-.pageContainer {
   /*margin: 0 auto;*/
-  /*height: 100vh;*/
-  /*width: 100vw;*/
-  /*vertical-align: center;*/
+  /*padding: 0;*/
+  font-family: 'Inconsolata', monospace, sans-serif;
+  background-color: white;
 }
 .centralContainer {
   position: absolute;
@@ -20,5 +14,5 @@ body {
   transform: translate(-50%, -50%);
   background-color: black;
   box-shadow: 1.5vmin 1.5vmin rgba(0,0,0,0.7);
-  border: 1px solid green;
+  /*border: 2px solid green;*/
 }
