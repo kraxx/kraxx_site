@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-
-import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import '../../public/styles/Main.css';
+import '../../public/styles/Main.mobile.css';
 
-library.add(fab, fas);
-
-import '../public/styles/Main.css';
-import projects from './projects';
+const projects = require("json-loader!yaml-loader!../projects.yaml");
 
 const Header = () => (
     <header>
@@ -29,7 +24,6 @@ const Header = () => (
           </a>
         </span>
       </nav>
-      {/*<hr />*/}
     </header>
 )
 
@@ -89,7 +83,7 @@ const Icons = ({ links }) => (
 const Section = ({ project }) => (
   <section>
     <p className='subHeader'>{project.title}</p>
-      <hr />
+    <hr />
     <p>{project.description}</p>
     <Icons links={project.links} />
   </section>
@@ -106,7 +100,6 @@ class Main extends Component {
   }
 
   changeSelected = ( idx ) => {
-    console.log("KEY", idx)
     this.setState({
       selected: parseInt(idx)
     });
