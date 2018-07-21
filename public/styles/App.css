@@ -28,3 +28,7 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
+.word:hover {
+  color: #ddd;
+  font-size: 21vmin;
+}

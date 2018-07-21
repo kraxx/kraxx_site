@@ -20,6 +20,10 @@ nav {
   padding: 0 0.5em;
 }
 .kraxx {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   float: left;
 }
 .icons {
@@ -29,6 +33,9 @@ nav {
   margin-left: 0.2em;
   color: inherit;
   text-decoration: none;
+}
+.icons a:hover {
+  color: #555;
 }
 
 hr {
@@ -76,7 +83,7 @@ aside {
 }
 .listItem:hover {
   color: white;
-  background-color: #333;
+  background-color: #555;
 }
 .selected {
   color: white;
@@ -101,7 +108,9 @@ section {
   color: inherit;
   text-decoration: none;
 }
-
+.projectLinks a:hover {
+  color: #555;
+}
 
 /* width */
 ::-webkit-scrollbar {
