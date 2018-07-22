@@ -1,0 +1,34 @@
+.about {
+  font-size: 1.5em;
+}
+.mailIcon {
+  font-size: 3em;
+}
+.mailIcon:hover {
+  color: #555;
+  cursor: pointer;
+}
+
+form {
+  margin: auto;
+  text-align: left;
+}
+input {
+  margin-bottom: 0.2em;
+  width: 25vw;
+}textarea {
+  resize: none;
+  height: 25vh;
+}
+form, textarea {
+  width: 50vw;
+}
+
+@media (max-width: 600px) {
+  .about {
+    font-size: 1em;
+  }
+  form, input, textarea {
+    width: 80vw;
+  }
+}

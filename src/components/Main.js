@@ -1,92 +1,33 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import Aside from './Aside';
+import Section from './Section';
+import About from './About';
 import '../../public/styles/Main.css';
-import '../../public/styles/Main.mobile.css';
 
 const projects = require("json-loader!yaml-loader!../projects.yaml");
 
-const Header = () => (
+const Header = ({ callback, aboutPage }) => (
     <header>
       <nav>
         <span className='kraxx'>kraxx</span>
         <span className='icons'>
+         {/* <a onClick={ () => callback() }>
+            {aboutPage
+              ? <FontAwesomeIcon icon={['fas', 'arrow-circle-left']} />
+              : <FontAwesomeIcon icon={['fas', 'question-circle']} />
+            }
+          </a>*/}
           <a href='https://github.com/kraxx/' target='_blank'>
             <FontAwesomeIcon icon={['fab', 'github-square']} />
           </a>
           <a href='https://www.linkedin.com/in/justinychow/' target='_blank'>
             <FontAwesomeIcon icon={['fab', 'linkedin']} />
           </a>
-          <a href='https://codepen.io/kraxx/' target='_blank'>
-            <FontAwesomeIcon icon={['fab', 'codepen']} />
-          </a>
-          <a href='https://www.freecodecamp.org/kraxx' target='_blank'>
-            <FontAwesomeIcon icon={['fab', 'free-code-camp']} />
-          </a>
         </span>
       </nav>
     </header>
-)
-
-const ListItem = ({ project, selected, callback }) => (
-  <div
-    className={'listItem ' + (selected ? 'selected' : '')}
-    onClick={() => callback()}
-  >
-    <h2>{project.title}</h2>
-  </div>
-)
-
-const Aside = ({ projects, selected, callback }) => (
-  <aside>
-    <div className='asideHeader'>
-      <p className='subHeader'>Projects</p>
-      <hr />
-    </div>
-    <div className='asideList'>
-      {projects.map((project, idx) =>
-        <ListItem
-          key={idx}
-          project={project}
-          selected={idx === selected ? true : false}
-          callback={() => callback(idx)}
-        />
-      )}
-    </div>
-  </aside>
-)
-
-const Icon = ({ type, url }) => (
-  <a href={url} target='_blank'>
-    <FontAwesomeIcon
-      icon={(() => {
-        switch (type) {
-          case 'www':
-            return ['fas', 'globe']
-          case 'github':            
-            return ['fab', 'github']
-          case 'playstore':
-            return ['fab', 'google-play']
-        }
-      })()}
-    />
-  </a>
-)
-
-const Icons = ({ links }) => (
-  <div className='projectLinks'>
-    {Object.keys(links).map((type, idx) =>
-      <Icon key={idx} type={type} url={links[type]} />
-    )}
-  </div>
-)
-
-const Section = ({ project }) => (
-  <section>
-    <p className='subHeader'>{project.title}</p>
-    <hr />
-    <p>{project.description}</p>
-    <Icons links={project.links} />
-  </section>
 )
 
 class Main extends Component {
@@ -94,7 +35,8 @@ class Main extends Component {
   constructor() {
     super();
     this.state = {
-      selected: 0
+      selected: 0,
+      aboutPage: false
     };
     this.projects = projects;
   }
@@ -105,13 +47,24 @@ class Main extends Component {
     });
   }
 
-  render() {    return (
+  toggleAboutPage = () => {
+    this.setState({
+      aboutPage: !this.state.aboutPage
+    });
+  }
+
+  render() {
+    return (
       <div className='mainContainer'>
-        <Header />
-        <main>
-          <Aside projects={this.projects} selected={this.state.selected} callback={(idx) => this.changeSelected(idx)} />
-          <Section project={this.projects[this.state.selected]} />
-        </main>
+        <Header aboutPage={this.state.aboutPage} callback={ () => this.toggleAboutPage() }/>
+        {this.state.aboutPage ? (
+          <About callback={ () => this.toggleAboutPage() } />
+        ) : (
+          <main className='projectContainer'>
+            <Aside projects={this.projects} selected={this.state.selected} callback={(idx) => this.changeSelected(idx)} />
+            <Section project={this.projects[this.state.selected]} />
+          </main>        
+        )}
       </div>
     )
   }

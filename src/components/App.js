@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Main from './Main';
 import '../../public/styles/App.css';
-import '../../public/styles/Main.mobile.css';
 
 const NamePlate = () => (
   <div className='wordContainer'>

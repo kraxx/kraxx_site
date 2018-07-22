@@ -32,3 +32,31 @@ body {
   color: #ddd;
   font-size: 21vmin;
 }
+
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.3vw;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black; 
+  border-radius: 50em;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: grey;
+}
+@media (max-width: 600px) {
+  ::-webkit-scrollbar {
+    height: 0.2em;
+    width: 0em;
+  }
+}
+/* Hide scrollbar for phones */
+@media only screen and (max-device-width: 600px) {
+  ::-webkit-scrollbar {
+    height: 0;
+  }  
+}
