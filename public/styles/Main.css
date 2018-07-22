@@ -114,7 +114,7 @@ section {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 0.2vw;
+  width: 0.3vw;
 }
 
 /* Handle */

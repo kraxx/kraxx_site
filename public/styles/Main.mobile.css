@@ -2,17 +2,13 @@
   main {
     grid-template-columns: 1fr 2fr;
   }
-}
-
-/* Left and Right start clipping */
-@media (max-width: 680px) {
-  nav .icons {
-    float: left;
+  nav {
+    font-size: 0.75em;
   }
 }
 
 /* Icons start stacking */
-@media (max-width: 490px) {
+@media (max-width: 600px) {
   nav {
     padding: 0;
   }
@@ -41,20 +37,22 @@
     grid-row: 1 / 2;
     white-space: nowrap;
     overflow-x: auto;
-    height: 3.3em;
+    height: 3.6em;
   }
   .asideHeader {
     display: none;
   }
   .listItem {
     display: inline-block;
-    width: 10em;
+    min-width: 10em;
+    text-align: center;
     overflow-x: hidden;
     margin: 0.1em 0.5em;
     font-size: 0.5em;
     box-shadow: 0.3em 0.3em 0.4em black;
   }
   section {
+    padding-top: 0;
     font-size: 1em;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
@@ -65,6 +63,14 @@
 
     /* width */
   ::-webkit-scrollbar {
-    height: 0;
+    height: 0.2em;
+    width: 0em;
   }
+}
+
+/* Hide scrollbar for phones */
+@media only screen and (max-device-width: 600px) {
+  ::-webkit-scrollbar {
+    height: 0;
+  }  
 }
