@@ -71,12 +71,16 @@ class About extends Component {
   render() {
     return (
       <main className='about'>
+        {/*
         {this.state.sent
           ? <p>Message sent!</p>
           : (this.state.contact
             ? <Contact callback={ e => this.sendMail(e) } error={this.state.error} />
             : <Blurb callback={ () => this.toggleContact() } />)
         }
+        */} 
+      {/* We'll settle with this for now */}
+        <Blurb callback={ () => window.open('mailto:contact@jchow.club') } />
       </main>
     )
   }

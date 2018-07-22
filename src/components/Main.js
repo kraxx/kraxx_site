@@ -13,12 +13,12 @@ const Header = ({ callback, aboutPage }) => (
       <nav>
         <span className='kraxx'>kraxx</span>
         <span className='icons'>
-         {/* <a onClick={ () => callback() }>
+          <a onClick={ () => callback() }>
             {aboutPage
               ? <FontAwesomeIcon icon={['fas', 'arrow-circle-left']} />
               : <FontAwesomeIcon icon={['fas', 'question-circle']} />
             }
-          </a>*/}
+          </a>
           <a href='https://github.com/kraxx/' target='_blank'>
             <FontAwesomeIcon icon={['fab', 'github-square']} />
           </a>
