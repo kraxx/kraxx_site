@@ -1,6 +1,7 @@
 body {
   font-family: 'Inconsolata', monospace, sans-serif;
   background-color: white;
+  background: url('../wallpaper/gplay2.png');
 }
 .centralContainer {
   position: absolute;
