@@ -3,6 +3,7 @@
 }
 .mailIcon {
   font-size: 3em;
+  display: inline-block;
 }
 .mailIcon:hover {
   color: #555;
@@ -16,7 +17,8 @@ form {
 input {
   margin-bottom: 0.2em;
   width: 25vw;
-}textarea {
+}
+textarea {
   resize: none;
   height: 25vh;
 }
