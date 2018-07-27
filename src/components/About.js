@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../../public/styles/About.css';
 
+const info = require("json-loader!yaml-loader!../about.yaml");
+
 const Blurb = ({ callback }) => (
   <div>
-    <p>Hi, I'm Justin, a software polyglot. I love working with Web technologies!</p>
-    <p>Feel free to contact me!</p>
+    {info && info.blurb.map((text, idx) =>
+      <p key={idx}>{text}</p>
+    )}
     <div className='mailIcon' onClick={ () => callback() }>
       <FontAwesomeIcon icon={['far', 'envelope']} />
     </div>
@@ -38,6 +41,7 @@ class About extends Component {
       sent: false,
       error: false
     };
+    console.log(info)
   }
 
   toggleContact = () => {
@@ -46,7 +50,28 @@ class About extends Component {
     });
   }
 
-  sendMail = (e) => {
+  sendMail = (data) => {
+    fetch('http://localhost:8000/send_mail', {
+      method: 'POST',
+      body: JSON.stringify(data)
+    })
+    // .then(res => res.json())
+    .then(res => {
+      if (res.ok) {
+        console.log('yes')
+        console.log(res)
+      } else {
+        console.log("no")
+        console.log(res)
+      }
+    })
+    .catch(err => {
+      console.log("weell I meana ay")
+      console.log(err)
+    })
+  }
+
+  handleSubmit = (e) => {
     e.preventDefault();
 
     let name = e.target.name.value;
@@ -54,13 +79,18 @@ class About extends Component {
     let message = e.target.message.value;
 
     if (name !== '' && email !== '' && message !== '') {
-      // send mail
-      this.setState({
-        sent: true
+
+      this.sendMail({
+        name: name,
+        email: email,
+        message: message
       });
-      setTimeout(() => {
-        this.props.callback();
-      }, 2500);
+      // this.setState({
+      //   sent: true
+      // });
+      // setTimeout(() => {
+      //   this.props.callback();
+      // }, 3500);
     } else {
       this.setState({
         error: true
@@ -71,16 +101,16 @@ class About extends Component {
   render() {
     return (
       <main className='about'>
-        {/*
+        
         {this.state.sent
           ? <p>Message sent!</p>
           : (this.state.contact
-            ? <Contact callback={ e => this.sendMail(e) } error={this.state.error} />
+            ? <Contact callback={ e => this.handleSubmit(e) } error={this.state.error} />
             : <Blurb callback={ () => this.toggleContact() } />)
         }
-        */} 
+        
       {/* We'll settle with this for now */}
-        <Blurb callback={ () => window.open('mailto:contact@jchow.club') } />
+        {/*<Blurb callback={ () => window.open('mailto:contact@jchow.club') } />*/}
       </main>
     )
   }

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// import ReactCardFlip from 'react-card-flip'
+
 import Main from './Main';
 import '../../public/styles/App.css';
 
@@ -12,12 +14,12 @@ class App extends Component {
 
   constructor() {
     super();
-    this.state = { toggled : false };
+    this.state = { flipped : false };
   }
 
   handleClick = () => {
-    if (this.state.toggled === false) {
-      this.setState({ toggled: true });
+    if (this.state.flipped === false) {
+      this.setState({ flipped: true });
     }
   }
 
@@ -25,10 +27,16 @@ class App extends Component {
     const displayed = this.state.toggled ? 'none' : 'inline-block';
     return (
       <div className='centralContainer' onClick={() => this.handleClick()}>
-      {this.state.toggled
+      {this.state.flipped
         ? <Main />
         : <NamePlate />
       }
+      {/*
+        <ReactCardFlip isFlipped={this.state.flipped}>
+          <NamePlate key='front' />
+          <Main key='back' />
+        </ReactCardFlip>
+      */}
       </div>
     );
   }
