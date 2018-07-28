@@ -11,28 +11,36 @@ body {
   width: 80vw;
   text-align: center;
   transform: translate(-50%, -50%);
-  background-color: black;
   box-shadow: 1.5vmin 1.5vmin rgba(0,0,0,0.7);
 }
-.wordContainer {
+.namePlate {
   position: relative;
-  display: inline-block;
-  top: 50%;
-  transform: perspective(1px) translateY(-50%);
   font-size: 20vmin;
   color: white;
-  width: 100%;
+  background-color: black;
+  height: 80vh;
+  width: 80vw;
+  display: table-cell;
+  vertical-align: middle;
 }
 .word {
-  display: inline-block;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  -webkit-transition: text-shadow 1s linear;
+  -moz-transition: text-shadow 1s linear;
+  -ms-transition: text-shadow 1s linear;
+  -o-transition: text-shadow 1s linear;
+  transition: text-shadow 1s linear;
 }
 .word:hover {
   color: #ddd;
   font-size: 21vmin;
+}
+.glow {
+  text-shadow: 0 0 0.2em white;
 }
 
 /* Scrollbar */
@@ -52,10 +60,9 @@ body {
 }
 
 @media (max-width: 600px) {
-  .centralContainer {
+  .centralContainer, .namePlate {
     height: 100vh !important;
     width: 100vw !important;
-    /*background-color: transparent !important;*/
   }
   ::-webkit-scrollbar {
     height: 0.2em;

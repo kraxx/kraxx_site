@@ -56,18 +56,13 @@ class About extends Component {
       method: 'POST',
       body: JSON.stringify(data)
     })
-    // .then(res => res.json())
     .then(res => {
+      // I'm unsure what to do with this
       if (res.ok) {
-        console.log('yes')
-        console.log(res)
       } else {
-        console.log("no")
-        console.log(res)
       }
     })
     .catch(err => {
-      console.log("weell I meana ay")
       console.log(err)
     })
   }
@@ -86,12 +81,12 @@ class About extends Component {
         email: email,
         message: message
       });
-      // this.setState({
-      //   sent: true
-      // });
-      // setTimeout(() => {
-      //   this.props.callback();
-      // }, 3500);
+      this.setState({
+        sent: true
+      });
+      setTimeout(() => {
+        this.props.callback();
+      }, 3500);
     } else {
       this.setState({
         error: true
@@ -102,16 +97,12 @@ class About extends Component {
   render() {
     return (
       <main className='about'>
-        
         {this.state.sent
           ? <p>Message sent!</p>
           : (this.state.contact
             ? <Contact callback={ e => this.handleSubmit(e) } error={this.state.error} />
             : <Blurb callback={ () => this.toggleContact() } />)
         }
-        
-      {/* We'll settle with this for now */}
-        {/*<Blurb callback={ () => window.open('mailto:contact@jchow.club') } />*/}
       </main>
     )
   }
