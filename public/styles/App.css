@@ -24,6 +24,7 @@ body {
   width: 100%;
 }
 .word {
+  display: inline-block;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -49,7 +50,13 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: grey;
 }
+
 @media (max-width: 600px) {
+  .centralContainer {
+    height: 100vh !important;
+    width: 100vw !important;
+    /*background-color: transparent !important;*/
+  }
   ::-webkit-scrollbar {
     height: 0.2em;
     width: 0em;
