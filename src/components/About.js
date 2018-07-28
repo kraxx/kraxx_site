@@ -9,7 +9,7 @@ const Blurb = ({ callback }) => (
     {info && info.blurb.map((text, idx) =>
       <p key={idx}>{text}</p>
     )}
-    <div className='mailIcon' onClick={ () => callback() }>
+    <div className='mailIcon squareIcon' onClick={ () => callback() }>
       <FontAwesomeIcon icon={['far', 'envelope']} />
     </div>
   </div>

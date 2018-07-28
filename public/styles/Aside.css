@@ -38,7 +38,7 @@ aside {
   background-color: black !important;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px), screen and (max-height: 500px) {
   aside {
     grid-column: 1 / 2;
     grid-row: 1 / 2;

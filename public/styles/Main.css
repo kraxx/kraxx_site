@@ -64,14 +64,13 @@ hr {
   }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px), screen and (max-height: 500px) {
   nav {
     padding: 0;
   }
 
   .mainContainer {
     border: none;
-    height: 100vh;
     background-color: transparent;
   }
 

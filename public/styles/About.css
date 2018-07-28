@@ -44,9 +44,13 @@ form p {
   text-align: center;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px), screen and (max-height: 500px) {
   .about {
     font-size: 1.6em;
+  }
+  .mailIcon {
+    border-radius: 10%;
+    background-color: white;
   }
   form, input, textarea {
     width: 80vw;
@@ -54,5 +58,7 @@ form p {
   }
   form button {
     font-size: 2.4em;
+    /*border-radius: 10%;*/
+    /*background-color: white;*/
   }
 }

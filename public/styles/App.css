@@ -59,18 +59,23 @@ body {
   background: grey;
 }
 
-@media (max-width: 600px) {
-  .centralContainer, .namePlate {
-    height: 100vh !important;
-    width: 100vw !important;
+@media screen and (max-width: 600px), screen and (max-height: 500px) {
+  .centralContainer{
+    height: 100% !important;
+    width: 100% !important;
+    box-shadow: none !important;
   }
+  .namePlate {
+    height: 100vh !important;
+    width: 100vw !important;    
+  } 
   ::-webkit-scrollbar {
     height: 0.2em;
     width: 0em;
   }
 }
 /* Hide scrollbar for phones */
-@media only screen and (max-device-width: 600px) {
+@media only screen and (max-device-width: 600px), only screen and (max-height: 500px) {
   ::-webkit-scrollbar {
     height: 0;
   }  
