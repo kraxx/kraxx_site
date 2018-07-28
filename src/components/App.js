@@ -20,6 +20,7 @@ class App extends Component {
     super();
     this.state = {
       flipped : false,
+      flipping: false,
       destroyCard: false,
       glow: false
     };
@@ -42,16 +43,25 @@ class App extends Component {
 
   handleClick = () => {
     if (this.state.flipped === false) {
-      this.setState({ flipped: true });
+      this.setState({
+        flipped: true,
+        flipping: true
+      });
       setTimeout(() => {
-        this.setState({ destroyCard: true })
-      }, 1000);
+        this.setState({
+          flipping: false,
+          destroyCard: true
+        })
+      }, 550);
     }
   }
 
   render() {
     return (
-      <div className='centralContainer' onClick={() => this.handleClick()}>
+      <div
+        className={ 'centralContainer ' + (this.state.flipping ? 'hiddenShadow' : '') }
+        onClick={() => this.handleClick()}
+      >
       {this.state.destroyCard ? (
         <Main />
       ) : (
