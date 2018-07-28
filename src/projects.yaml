@@ -10,18 +10,18 @@
     playstore: https://play.google.com/store/apps/details?id=com.rabbitcloud.homelessapp
     github: https://github.com/kraxx/SV_Helping_Hands
 
-- title: Fract_ol
-  description: Fractal viewer coded in C. Utilizes parallelized POSIX threads.
+- title: 42 Portfolio
+  description: An aggregate of all my projects done at 42 Silicon Valley. Projects are primarily done in C.
   links:
-    github: https://github.com/kraxx/42_fractal
-
+    github: https://github.com/kraxx/42_Portfolio
+    
 - title: Free Code Camp
   description: Projects done for FreeCodeCamp's front-end JavaScript curriculum. Hosted on Codepen.
   links:
     codepen: https://codepen.io/kraxx
     freecodecamp: https://www.freecodecamp.org/kraxx
 
-- title: + more
-  description: I've got a ton of code-related projects done, scattered about my GitHub account. Will get to organizing it all in due time :)
+- title: Fract_ol
+  description: Fractal viewer coded in C. Utilizes parallelized POSIX threads.
   links:
-    github: https://github.com/kraxx
+    github: https://github.com/kraxx/42_fractal

@@ -16,7 +16,7 @@ const Header = ({ callback, aboutPage }) => (
           <a onClick={ () => callback() }>
             {aboutPage
               ? <FontAwesomeIcon icon={['fas', 'arrow-circle-left']} />
-              : <FontAwesomeIcon icon={['fas', 'question-circle']} />
+              : <FontAwesomeIcon className='spinner' icon={['fas', 'question-circle']} />
             }
           </a>
           <a href='https://github.com/kraxx/' target='_blank'>
