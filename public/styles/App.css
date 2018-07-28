@@ -29,18 +29,18 @@ body {
   -ms-user-select: none;
   user-select: none;
 
-  -webkit-transition: text-shadow 1s linear;
-  -moz-transition: text-shadow 1s linear;
-  -ms-transition: text-shadow 1s linear;
-  -o-transition: text-shadow 1s linear;
-  transition: text-shadow 1s linear;
+  -webkit-transition: text-shadow 2s linear;
+  -moz-transition: text-shadow 2s linear;
+  -ms-transition: text-shadow 2s linear;
+  -o-transition: text-shadow 2s linear;
+  transition: text-shadow 2s linear;
 }
 .word:hover {
   color: #ddd;
   font-size: 21vmin;
 }
 .glow {
-  text-shadow: 0 0 0.2em white;
+  text-shadow: 0 0 0.3em white;
 }
 
 /* Scrollbar */

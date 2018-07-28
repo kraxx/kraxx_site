@@ -25,12 +25,14 @@ class App extends Component {
   }
 
   pulseText = () => {
-    setInterval(() => {
+    if (this.state.flipped === false) {
       this.setState({
         glow: !this.state.glow
-      })
-      console.log("deez nuts")
-    }, 1000);    
+      });
+      setTimeout(() => {
+        this.pulseText();
+      }, 2000);
+    }  
   }
 
   handleClick = () => {
@@ -40,7 +42,6 @@ class App extends Component {
   }
 
   render() {
-    const displayed = this.state.toggled ? 'none' : 'inline-block';
     return (
       <div className='centralContainer' onClick={() => this.handleClick()}>
         <ReactCardFlip isFlipped={this.state.flipped}>
