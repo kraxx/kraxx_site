@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import ReactCardFlip from 'react-card-flip'
 
+/*
+** ReactCardFlip causing scroll issues in Firefox... nasty workaround implemented
+*/
+
 import Main from './Main';
 import '../../public/styles/App.css';
 
@@ -16,6 +20,7 @@ class App extends Component {
     super();
     this.state = {
       flipped : false,
+      destroyCard: false,
       glow: false
     };
   }
@@ -38,16 +43,23 @@ class App extends Component {
   handleClick = () => {
     if (this.state.flipped === false) {
       this.setState({ flipped: true });
+      setTimeout(() => {
+        this.setState({ destroyCard: true })
+      }, 1000);
     }
   }
 
   render() {
     return (
       <div className='centralContainer' onClick={() => this.handleClick()}>
+      {this.state.destroyCard ? (
+        <Main />
+      ) : (
         <ReactCardFlip isFlipped={this.state.flipped}>
           <NamePlate key='front' glow={this.state.glow} />
           <Main key='back' />
         </ReactCardFlip>
+      )}
       </div>
     );
   }
