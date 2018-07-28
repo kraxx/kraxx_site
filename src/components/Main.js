@@ -38,7 +38,6 @@ class Main extends Component {
       selected: 0,
       aboutPage: false
     };
-    this.projects = projects;
   }
 
   changeSelected = ( idx ) => {
@@ -61,8 +60,8 @@ class Main extends Component {
           <About callback={ () => this.toggleAboutPage() } />
         ) : (
           <main className='projectContainer'>
-            <Aside projects={this.projects} selected={this.state.selected} callback={(idx) => this.changeSelected(idx)} />
-            <Section project={this.projects[this.state.selected]} />
+            <Aside projects={projects} selected={this.state.selected} callback={(idx) => this.changeSelected(idx)} />
+            <Section project={projects[this.state.selected]} />
           </main>        
         )}
       </div>

@@ -1,6 +1,5 @@
 blurb: 
-  - Hi, I'm Justin, a full stack web developer. I love working with Web technologies!
-  - Well versed in the MERN stack; experienced in C, Go, Python, and more.
-  - Feel free to send me a message!
+  - Hi, I'm Justin, full stack web developer. Well versed in React and Node.js; experienced in C, Go, Python, and more!
+  - I love building things, feel free to shoot me a message!
 
-email_service: 
+email_service: https://kraxx-mail-service.herokuapp.com/send_mail

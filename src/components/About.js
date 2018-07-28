@@ -27,7 +27,9 @@ const Contact = ({ callback, error }) => (
     <br />
     <textarea name='message' maxLength='5000' />
     <br />
-    <input type='submit' value='SUBMIT' />
+    <button type='submit'>
+      <FontAwesomeIcon icon={['fas', 'paper-plane']} />
+    </button>
     {error && <p>Please fill out all fields.</p>}
   </form>
 )
@@ -41,7 +43,6 @@ class About extends Component {
       sent: false,
       error: false
     };
-    console.log(info)
   }
 
   toggleContact = () => {
@@ -51,7 +52,7 @@ class About extends Component {
   }
 
   sendMail = (data) => {
-    fetch('http://localhost:8000/send_mail', {
+    fetch(info.email_service, {
       method: 'POST',
       body: JSON.stringify(data)
     })

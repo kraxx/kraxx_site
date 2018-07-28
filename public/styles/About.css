@@ -8,6 +8,7 @@
 .mailIcon:hover {
   color: #555;
   cursor: pointer;
+  font-size: 3.1em;
 }
 
 form {
@@ -24,6 +25,22 @@ textarea {
 }
 form, textarea {
   width: 50vw;
+}
+form button {
+  margin: auto;
+  display: block;
+  /*text-align: center;*/
+  background: none;
+  border: none;
+  font-size: 2.5em;
+}
+form button:hover {
+  color: #555;
+  cursor: pointer;
+  font-size: 2.6em;
+}
+form p {
+  text-align: center;
 }
 
 @media (max-width: 600px) {

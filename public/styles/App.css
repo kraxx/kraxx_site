@@ -22,7 +22,6 @@ body {
   font-size: 20vmin;
   color: white;
   width: 100%;
-  /*background: green;*/
 }
 .word {
   display: inline-block;
@@ -51,7 +50,13 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: grey;
 }
+
 @media (max-width: 600px) {
+  .centralContainer {
+    height: 100vh !important;
+    width: 100vw !important;
+    /*background-color: transparent !important;*/
+  }
   ::-webkit-scrollbar {
     height: 0.2em;
     width: 0em;

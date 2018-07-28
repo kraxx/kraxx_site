@@ -72,19 +72,15 @@ hr {
     padding: 0;
   }
   .kraxx {
-    padding: 0;
-    font-size: 0.55em;
-  }
-  .centralContainer {
-    height: 100vh !important;
-    width: 100vw !important;
+    /*padding: 0;*/
+    /*font-size: 1em;*/
   }
   .mainContainer {
     border: none;
   }
   nav .icons {
-    float: right;
-    font-size: 0.55em;
+    /*float: right;*/
+    /*font-size: 1em;*/
   }
 
   .projectContainer {
