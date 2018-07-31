@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../../public/styles/About.css';
 
+/*
+** ABOUT: Short bio blurb and contact form
+*/
+
 const info = require("json-loader!yaml-loader!../about.yaml");
 
 const Blurb = ({ callback }) => (

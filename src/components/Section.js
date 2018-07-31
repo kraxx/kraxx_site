@@ -3,6 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import '../../public/styles/Section.css';
 
+/*
+** SECTION: Project description and links
+*/
+
 const Icon = ({ type, url }) => (
   <a href={url} target='_blank'>
     <FontAwesomeIcon

@@ -6,6 +6,10 @@ import Section from './Section';
 import About from './About';
 import '../../public/styles/Main.css';
 
+/*
+** MAIN: Container for all components "behind" the nameplate
+*/
+
 const projects = require("json-loader!yaml-loader!../projects.yaml");
 
 const Header = ({ callback, aboutPage }) => (

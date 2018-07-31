@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import '../../public/styles/Aside.css';
 
+/*
+** ASIDE: Sidebar list of projects
+*/
+
 const ListItem = ({ project, selected, callback }) => (
   <div
     className={'listItem ' + (selected ? 'selected' : '')}

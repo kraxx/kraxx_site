@@ -1,12 +1,16 @@
-import React, { Component } from 'react';
-import ReactCardFlip from 'react-card-flip'
-
 /*
 ** ReactCardFlip causing scroll issues in Firefox... nasty workaround implemented where I destroy the component after flipping
 */
 
+import React, { Component } from 'react';
+import ReactCardFlip from 'react-card-flip'
+
 import Main from './Main';
 import '../../public/styles/App.css';
+
+/*
+** APP: App container; contains components for nameplate (front) and main container (back)
+*/
 
 const NamePlate = ({ glow }) => (
   <div className={ 'namePlate ' + (glow ? 'glow' : 'nope') }>
