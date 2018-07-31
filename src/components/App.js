@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactCardFlip from 'react-card-flip'
 
 /*
-** ReactCardFlip causing scroll issues in Firefox... nasty workaround implemented
+** ReactCardFlip causing scroll issues in Firefox... nasty workaround implemented where I destroy the component after flipping
 */
 
 import Main from './Main';
@@ -10,7 +10,7 @@ import '../../public/styles/App.css';
 
 const NamePlate = ({ glow }) => (
   <div className={ 'namePlate ' + (glow ? 'glow' : 'nope') }>
-    <p className='word' unselectable='on'>kraxx</p>
+    <p className='word' unselectable='on'>{'<kraxx/>'}</p>
   </div>
 )
 
